@@ -1,9 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+
 using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
+    public static Action OnAesteroidDestroyed;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -18,10 +20,11 @@ public class ClickManager : MonoBehaviour
                 {
                     destroyable.DestroyObj();
 
+                    OnAesteroidDestroyed?.Invoke();
                     /*
                      * TODO: Add sound
                      *       Add anim
-                     */       
+                     */
                 }
             }
         }
