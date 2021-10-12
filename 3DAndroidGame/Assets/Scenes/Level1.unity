@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a665d7ae984374c8b2cffea0d8f74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsText: {fileID: 0}
+  pointsText: {fileID: 844771965}
 --- !u!4 &1050623486
 Transform:
   m_ObjectHideFlags: 0
