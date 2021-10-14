@@ -14,6 +14,7 @@ class LifesManager : MonoBehaviour
     {
         lifes--;
 
+        // TODO: DENIS STUFF 
         if(lifes <= 0)
         {
             Debug.Log("GAME OVER!");
