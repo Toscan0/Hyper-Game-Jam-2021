@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class EndGameZone : MonoBehaviour
 {
-   
+    public static Action OnLifeLost;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(1, 1, 0, 0.5f);
@@ -18,9 +18,7 @@ public class EndGameZone : MonoBehaviour
         {
             destroyable.DestroyObj(false);
 
-            /*
-             * TODO: Remove Live
-             */
+            OnLifeLost?.Invoke();
         }
     }
 }
