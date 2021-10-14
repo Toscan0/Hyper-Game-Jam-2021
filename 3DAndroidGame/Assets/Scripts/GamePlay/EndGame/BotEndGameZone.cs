@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class EndGameZone : MonoBehaviour
+public class BotEndGameZone : MonoBehaviour
 {
     public static Action OnLifeLost;
 

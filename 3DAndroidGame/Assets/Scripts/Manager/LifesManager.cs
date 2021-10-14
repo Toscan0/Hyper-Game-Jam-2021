@@ -7,7 +7,7 @@ class LifesManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EndGameZone.OnLifeLost += TakeLife;
+        BotEndGameZone.OnLifeLost += TakeLife;
     }
 
     private void TakeLife()
@@ -23,7 +23,7 @@ class LifesManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        EndGameZone.OnLifeLost -= TakeLife;
+        BotEndGameZone.OnLifeLost -= TakeLife;
     }
 }
 
