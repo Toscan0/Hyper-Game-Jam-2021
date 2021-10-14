@@ -22,8 +22,8 @@ public class ClickManager : MonoBehaviour
 
                     OnAesteroidDestroyed?.Invoke();
                     /*
-                     * TODO: Add sound
-                     *       Add anim
+                     * TODO: Add sound (?)
+                     *       Add anim (?)
                      */
                 }
             }

@@ -11,17 +11,15 @@ public class EndGameZone : MonoBehaviour
         Gizmos.DrawCube(transform.position, transform.localScale);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        var destroyable = collision.gameObject.GetComponent<IDestroyable>();
+        var destroyable = other.gameObject.GetComponent<IDestroyable>();
         if (destroyable != null)
         {
             destroyable.DestroyObj();
 
             /*
-             * TODO: Add sound
-             *       Add anim
-             *       Remove Live
+             * TODO: Remove Live
              */
         }
     }
