@@ -8,8 +8,6 @@ public class SelfDestroy : MonoBehaviour, IDestroyable
     [SerializeField]
     private AudioClip destroyedSound;
 
-    private bool firstTime = true;
-
     private AudioSource audioSource;
 
     private void Awake()
@@ -17,15 +15,17 @@ public class SelfDestroy : MonoBehaviour, IDestroyable
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void DestroyObj()
+    public void DestroyObj(bool destroyedByPlayer)
     {
         // Only destroys the obj one time
-        if (firstTime)
+        if (destroyedByPlayer)
         {
             PlaySound();
+            //TODO: PLAY ANIM 
 
-            Destroy(gameObject, 1);
+            
         }
+        Destroy(gameObject, 1);
     }
 
     private void PlaySound()

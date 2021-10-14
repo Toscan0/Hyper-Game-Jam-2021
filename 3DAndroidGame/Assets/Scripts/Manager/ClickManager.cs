@@ -18,13 +18,9 @@ public class ClickManager : MonoBehaviour
                 var destroyable = hit.transform.gameObject.GetComponent<IDestroyable>();
                 if (destroyable != null) 
                 {
-                    destroyable.DestroyObj();
+                    destroyable.DestroyObj(true);
 
                     OnAesteroidDestroyed?.Invoke();
-                    /*
-                     * TODO: Add sound (?)
-                     *       Add anim (?)
-                     */
                 }
             }
         }

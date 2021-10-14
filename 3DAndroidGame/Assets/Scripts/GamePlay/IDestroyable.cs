@@ -1,4 +1,4 @@
 ﻿interface IDestroyable
 {
-    void DestroyObj();
+    void DestroyObj(bool destroyedByPlayer);
 }

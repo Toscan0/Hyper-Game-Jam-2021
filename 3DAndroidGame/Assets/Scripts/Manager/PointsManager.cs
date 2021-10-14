@@ -14,9 +14,14 @@ public class PointsManager : MonoBehaviour
 
     private const string pointsStr = "<b>Points:</b> ";
     private const string maxPointsStr = "<b>Max points:</b> ";
+    private const string maxPointsKey = "maxPoints";
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey(maxPointsKey))
+        {
+            maxPoints = PlayerPrefs.GetInt(maxPointsKey);
+        }
         UpdatePointsText();
     }
 
@@ -31,6 +36,9 @@ public class PointsManager : MonoBehaviour
         if(points > maxPoints)
         {
             maxPoints = points;
+
+            PlayerPrefs.SetInt(maxPointsKey, maxPoints);
+            PlayerPrefs.Save();
         }
 
         UpdatePointsText();

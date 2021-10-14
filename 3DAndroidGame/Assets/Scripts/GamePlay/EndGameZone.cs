@@ -16,7 +16,7 @@ public class EndGameZone : MonoBehaviour
         var destroyable = other.gameObject.GetComponent<IDestroyable>();
         if (destroyable != null)
         {
-            destroyable.DestroyObj();
+            destroyable.DestroyObj(false);
 
             /*
              * TODO: Remove Live
