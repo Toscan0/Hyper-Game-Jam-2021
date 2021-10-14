@@ -10,7 +10,10 @@ public class PointsManager : MonoBehaviour
     private Text pointsText;
     
     private static int points = 0;
+    private static int maxPoints = 0;
+
     private const string pointsStr = "<b>Points:</b> ";
+    private const string maxPointsStr = "<b>Max points:</b> ";
 
     private void Start()
     {
@@ -25,13 +28,20 @@ public class PointsManager : MonoBehaviour
     private void UpdatePoints()
     {
         points++;
+        if(points > maxPoints)
+        {
+            maxPoints = points;
+        }
+
         UpdatePointsText();
     }
 
     private void UpdatePointsText()
     {
-        pointsText.text = pointsStr + points;
+        pointsText.text = pointsStr + points + "\n" +
+            maxPointsStr + maxPoints;
     }
+
 
     private void OnDisable()
     {
