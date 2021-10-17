@@ -5,11 +5,13 @@ using UnityEngine;
 public class MissilManager : MonoBehaviour
 {
     [SerializeField]
+    private Transform spawner;
+    [SerializeField]
     private GameObject MissilPrefab;
     
     public void CreateMissil(Transform target)
     {
-        var obj = Instantiate(MissilPrefab, transform, true);
+        var obj = Instantiate(MissilPrefab, spawner.localPosition, Quaternion.identity);
         obj.GetComponent<Missil>().target = target;
     }
 }
