@@ -2,12 +2,20 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class BotEndGameZone : MonoBehaviour
 {
     public static Action OnLifeLost;
 
     [SerializeField]
     private Vector3 initialPos;
+
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();    
+    }
 
     private void Start()
     {
@@ -42,12 +50,15 @@ public class BotEndGameZone : MonoBehaviour
 
                     OnLifeLost?.Invoke();
                 }
+
+                audioSource.Play();
             }
             
             if(other.tag == "Missile")
             {
                 MissClick();
                 Destroy(other.transform.parent.gameObject);
+
             }
         }
     }
