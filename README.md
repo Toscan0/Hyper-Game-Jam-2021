@@ -13,7 +13,7 @@ Tap Tap Tap to defend an Earth Tap Tap Tap!
 
 ## Useful Links
 
-* [Gameplay]()
+* [Gameplay](https://youtu.be/0nPJO4yVDzM)
 * [Release]()
 
 ## Members
