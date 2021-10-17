@@ -53,7 +53,8 @@ public class Missil : MonoBehaviour
             else if(other.tag == "missPrefab")
             {
                 FindObjectOfType<BotEndGameZone>().MissClick();
-
+                
+                Destroy(other.gameObject);
                 target = botEndGameZone;
             }
 
