@@ -20,12 +20,12 @@ public class SelfDestroy : MonoBehaviour, IDestroyable
         // Only destroys the obj one time
         if (destroyedByPlayer)
         {
-            PlaySound();
+            //PlaySound();
             //TODO: PLAY ANIM 
-
+            FindObjectOfType<BotEndGameZone>().MoveEndZone(gameObject, true);
             
         }
-        Destroy(gameObject, 1);
+        Destroy(gameObject);
     }
 
     private void PlaySound()

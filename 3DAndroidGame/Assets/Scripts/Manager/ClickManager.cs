@@ -8,6 +8,38 @@ public class ClickManager : MonoBehaviour
 
     private void Update()
     {
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.phase == TouchPhase.Began)
+            {
+                // Construct a ray from the current touch coordinates
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if(hit.transform.gameObject.tag == "MissClick")
+                    {
+                        FindObjectOfType<BotEndGameZone>().MissClick();
+                    }
+                    else
+                    {
+                        var destroyable = hit.transform.gameObject.GetComponent<Enemy>();
+
+                        if (destroyable != null)
+                        {
+                            destroyable.IncClicks();
+
+                            if (destroyable.clicksCount >= destroyable.clicksToDestroy)
+                            {
+                                destroyable.GetComponent<IDestroyable>().DestroyObj(true);
+                                OnAesteroidDestroyed?.Invoke();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -15,12 +47,24 @@ public class ClickManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                var destroyable = hit.transform.gameObject.GetComponent<IDestroyable>();
-                if (destroyable != null) 
+                if (hit.transform.gameObject.tag == "MissClick")
                 {
-                    destroyable.DestroyObj(true);
+                    FindObjectOfType<BotEndGameZone>().MissClick();
+                }
+                else
+                {
+                    var destroyable = hit.transform.gameObject.GetComponent<Enemy>();
 
-                    OnAesteroidDestroyed?.Invoke();
+                    if (destroyable != null)
+                    {
+                        destroyable.IncClicks();
+
+                        if (destroyable.clicksCount >= destroyable.clicksToDestroy)
+                        {
+                            destroyable.GetComponent<IDestroyable>().DestroyObj(true);
+                            OnAesteroidDestroyed?.Invoke();
+                        }
+                    }
                 }
             }
         }

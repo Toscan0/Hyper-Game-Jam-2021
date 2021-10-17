@@ -8,7 +8,10 @@ public class Spawner : MonoBehaviour
     private GameObject[] asteroidsPrefabs;
 
     private int launchProbability { get; set; } = 75;
+    [SerializeField]
     private float minReloadTime = 2.5f;
+
+    [SerializeField]
     private float maxReloadTime = 5f;
 
     private void OnDrawGizmos()
