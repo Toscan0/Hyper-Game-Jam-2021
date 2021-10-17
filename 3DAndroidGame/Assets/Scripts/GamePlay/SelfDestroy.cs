@@ -5,7 +5,7 @@ using System;
 
 public class SelfDestroy : MonoBehaviour, IDestroyable
 {
-    public static Action OnAesteroidDestroyed;
+    public static Action<GameObject> OnAesteroidDestroyed;
 
   
 
@@ -16,7 +16,7 @@ public class SelfDestroy : MonoBehaviour, IDestroyable
         {
             //TODO: PLAY ANIM 
             FindObjectOfType<BotEndGameZone>().MoveEndZone(gameObject, true);
-            OnAesteroidDestroyed?.Invoke();
+            OnAesteroidDestroyed?.Invoke(gameObject);
 
         }
         Destroy(gameObject);
