@@ -47,7 +47,7 @@ public class BotEndGameZone : MonoBehaviour
             if(other.tag == "Missile")
             {
                 MissClick();
-                Destroy(other.gameObject);
+                Destroy(other.transform.parent.gameObject);
             }
         }
     }

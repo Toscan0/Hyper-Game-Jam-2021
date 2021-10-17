@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
 
     public void IncScaleSpeed()
     {
-        speedScale += 0.1f;
+        speedScale += 0.2f;
 
     }
 }
