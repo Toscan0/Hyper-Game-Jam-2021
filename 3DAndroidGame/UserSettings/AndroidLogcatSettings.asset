@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "6XKJH6V8QKM7Q4WK",
         "name": "com.dev.Taptaptap",
-        "processId": 14040,
+        "processId": 32305,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -114,6 +114,12 @@
             "deviceId": "6XKJH6V8QKM7Q4WK",
             "name": "com.dev.Taptaptap",
             "processId": 14040,
+            "exited": false
+        },
+        {
+            "deviceId": "6XKJH6V8QKM7Q4WK",
+            "name": "com.dev.Taptaptap",
+            "processId": 32305,
             "exited": false
         }
     ],

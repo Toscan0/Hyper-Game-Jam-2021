@@ -9,7 +9,7 @@ public class MissilManager : MonoBehaviour
     
     public void CreateMissil(Transform target)
     {
-        var obj = Instantiate(MissilPrefab, transform);
+        var obj = Instantiate(MissilPrefab, transform, true);
         obj.GetComponent<Missil>().target = target;
     }
 }
