@@ -14,7 +14,6 @@ Tap Tap Tap to defend an Earth Tap Tap Tap!
 ## Useful Links
 
 * [Gameplay]()
-* [Home page]()
 * [Release]()
 
 ## Members
