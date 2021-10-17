@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
-
+    [SerializeField]
+    private GameObject missPrefab;
     private void Update()
     {
         //foreach (Touch touch in Input.touches)
@@ -50,7 +51,12 @@ public class ClickManager : MonoBehaviour
             {
                 if (hit.transform.gameObject.tag == "MissClick")
                 {
-                    FindObjectOfType<BotEndGameZone>().MissClick();
+                    //FindObjectOfType<BotEndGameZone>().MissClick();
+
+                    var aux = Instantiate(missPrefab, missPrefab.transform.position, Quaternion.identity);
+                    aux.transform.position = hit.point;
+
+                    FindObjectOfType<MissilManager>().CreateMissil(aux.transform);
                 }
                 else
                 {
