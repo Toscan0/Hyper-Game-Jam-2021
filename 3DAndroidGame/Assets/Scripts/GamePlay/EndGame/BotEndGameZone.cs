@@ -27,8 +27,8 @@ public class BotEndGameZone : MonoBehaviour
             // Stop ball spanning
             // Show score
             // Show Play again
-            Debug.Log("GameOver");
-            SceneManager.LoadScene(1);
+            //Debug.Log("GameOver");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else
         {
