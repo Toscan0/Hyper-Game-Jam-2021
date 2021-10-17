@@ -18,7 +18,6 @@ public class RestartGame : MonoBehaviour
         pointsManager.Restart();
 
         int indexToLoad = SceneManager.GetActiveScene().buildIndex - 1;
-        Debug.Log(indexToLoad);
         StartCoroutine(LoadSceneByIndex(indexToLoad, animDuration));
     }
 
