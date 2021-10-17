@@ -50,6 +50,12 @@ public class Missil : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+            else if(other.tag == "MissClick")
+            {
+                FindObjectOfType<BotEndGameZone>().MissClick();
+
+                Destroy(gameObject);
+            }
 
             if( other.tag == "BotEndGameZone")
             {

@@ -50,7 +50,9 @@ public class ClickManager : MonoBehaviour
             {
                 if (hit.transform.gameObject.tag == "MissClick")
                 {
-                    FindObjectOfType<BotEndGameZone>().MissClick();
+                    //FindObjectOfType<BotEndGameZone>().MissClick();
+
+                    FindObjectOfType<MissilManager>().CreateMissil(hit.transform);
                 }
                 else
                 {
