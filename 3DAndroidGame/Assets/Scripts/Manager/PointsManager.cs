@@ -11,6 +11,9 @@ public class PointsManager : MonoBehaviour
     
     private static int points = 0;
     private static int maxPoints = 0;
+    private static int scalePoints = 1;
+
+    private int currentXpScale = 0;
 
     private const string pointsStr = "<b>Points:</b> ";
     private const string maxPointsStr = "<b>Max points:</b> ";
@@ -30,9 +33,17 @@ public class PointsManager : MonoBehaviour
         SelfDestroy.OnAesteroidDestroyed += UpdatePoints;
     }
 
-    private void UpdatePoints()
+    private void UpdatePoints(GameObject enemy)
     {
-        points++;
+        var enemyPoints = enemy.GetComponent<Enemy>().clicksToDestroy;
+        points += enemyPoints * scalePoints;
+        currentXpScale += enemyPoints;
+        if(currentXpScale >= scalePoints * 10)
+        {
+            currentXpScale = 0;
+            scalePoints++;
+        }
+
         if(points > maxPoints)
         {
             maxPoints = points;
@@ -46,8 +57,7 @@ public class PointsManager : MonoBehaviour
 
     private void UpdatePointsText()
     {
-        pointsText.text = pointsStr + points + "\n" +
-            maxPointsStr + maxPoints;
+        pointsText.text = points + " X " + scalePoints;
     }
 
 

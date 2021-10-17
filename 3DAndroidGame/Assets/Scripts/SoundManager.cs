@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    public void PlaySound()
+    public void PlaySound(GameObject gj)
     {
         audioSource.Play();
     }
