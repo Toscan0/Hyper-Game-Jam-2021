@@ -51,6 +51,12 @@ public class PointsManager : MonoBehaviour
     }
 
 
+    public void Restart()
+    {
+        points = 0;
+        maxPoints = 0;
+    }
+
     private void OnDisable()
     {
         SelfDestroy.OnAesteroidDestroyed -= UpdatePoints;
