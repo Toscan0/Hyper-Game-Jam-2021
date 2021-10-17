@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1280404501329011385}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.54728, y: 0.54728, z: 1e-15}
-  m_LocalScale: {x: 0.45272, y: 0.45272, z: 0.45272}
+  m_LocalScale: {x: 0.15033926, y: 0.15033926, z: 0.15033926}
   m_Children:
   - {fileID: 7895376894484525230}
   m_Father: {fileID: 0}
@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 7895376894484525230}
   - component: {fileID: 7647621141610465783}
   - component: {fileID: 1544725501337243067}
+  - component: {fileID: 198482198956839732}
   m_Layer: 0
   m_Name: RocketBody
   m_TagString: Missile
@@ -143,3 +144,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5908208325185333860}
   m_Mesh: {fileID: 4300046, guid: 86fc77829a6e78d43a007a5d05e6be45, type: 3}
+--- !u!136 &198482198956839732
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908208325185333860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 13.570548
+  m_Direction: 1
+  m_Center: {x: -0.0005044937, y: 0.81648415, z: 0.007073227}
