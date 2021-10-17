@@ -54,7 +54,7 @@ public class Missil : MonoBehaviour
             {
                 FindObjectOfType<BotEndGameZone>().MissClick();
 
-                Destroy(gameObject);
+                target = botEndGameZone;
             }
 
             if( other.tag == "BotEndGameZone")
