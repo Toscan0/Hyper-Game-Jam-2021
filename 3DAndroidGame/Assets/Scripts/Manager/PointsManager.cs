@@ -27,7 +27,7 @@ public class PointsManager : MonoBehaviour
 
     private void OnEnable()
     {
-        ClickManager.OnAesteroidDestroyed += UpdatePoints;
+        SelfDestroy.OnAesteroidDestroyed += UpdatePoints;
     }
 
     private void UpdatePoints()
@@ -53,6 +53,6 @@ public class PointsManager : MonoBehaviour
 
     private void OnDisable()
     {
-        ClickManager.OnAesteroidDestroyed -= UpdatePoints;
+        SelfDestroy.OnAesteroidDestroyed -= UpdatePoints;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BotEndGameZone : MonoBehaviour
 {
@@ -27,16 +28,26 @@ public class BotEndGameZone : MonoBehaviour
             // Show score
             // Show Play again
             Debug.Log("GameOver");
+            SceneManager.LoadScene(1);
         }
         else
         {
-            MoveEndZone(other.gameObject, false);
-            var destroyable = other.gameObject.GetComponent<IDestroyable>();
-            if (destroyable != null)
+            if(other.tag == "Enemy")
             {
-                destroyable.DestroyObj(false);
+                MoveEndZone(other.gameObject, false);
+                var destroyable = other.gameObject.GetComponent<IDestroyable>();
+                if (destroyable != null)
+                {
+                    destroyable.DestroyObj(false);
 
-                OnLifeLost?.Invoke();
+                    OnLifeLost?.Invoke();
+                }
+            }
+            
+            if(other.tag == "Missile")
+            {
+                MissClick();
+                Destroy(other.gameObject);
             }
         }
     }

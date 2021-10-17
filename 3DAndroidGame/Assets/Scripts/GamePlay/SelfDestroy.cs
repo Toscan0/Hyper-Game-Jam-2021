@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(AudioSource))]
 public class SelfDestroy : MonoBehaviour, IDestroyable
 {
+    public static Action OnAesteroidDestroyed;
+
     [SerializeField]
     private AudioClip destroyedSound;
 
@@ -23,7 +26,8 @@ public class SelfDestroy : MonoBehaviour, IDestroyable
             //PlaySound();
             //TODO: PLAY ANIM 
             FindObjectOfType<BotEndGameZone>().MoveEndZone(gameObject, true);
-            
+            OnAesteroidDestroyed?.Invoke();
+
         }
         Destroy(gameObject);
     }

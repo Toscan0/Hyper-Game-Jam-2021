@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Top
   - MissClick
+  - Enemy
+  - Missile
+  - BotEndGameZone
   layers:
   - Default
   - TransparentFX
