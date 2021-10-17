@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,13 +14,19 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int upDownValue;
 
-
+    [SerializeField]
+    private Text clicksToDestroyText;
+    
     public int clicksCount { get; set; }
 
     #region getters
         public int GetUpDownValue() { return upDownValue; }
     #endregion
 
+    private void Start()
+    {
+        updateText(clicksToDestroy);
+    }
 
     private void FixedUpdate()
     {
@@ -29,5 +36,12 @@ public class Enemy : MonoBehaviour
     public void IncClicks()
     {
         clicksCount++;
+
+        updateText(clicksToDestroy - clicksCount);
+    }
+
+    private void updateText(int newVal)
+    {
+        clicksToDestroyText.text = newVal.ToString();
     }
 }
