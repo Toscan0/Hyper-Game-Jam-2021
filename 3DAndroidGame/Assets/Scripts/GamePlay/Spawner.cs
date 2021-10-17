@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject[] asteroidsPrefabs;
 
-    private int launchProbability { get; set; } = 75;
+    private int launchProbability { get; set; } = 55;
     [SerializeField]
     private float minReloadTime = 2.5f;
 
