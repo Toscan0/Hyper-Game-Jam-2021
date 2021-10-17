@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class PointsManager : MonoBehaviour
 {
@@ -42,6 +44,7 @@ public class PointsManager : MonoBehaviour
         {
             currentXpScale = 0;
             scalePoints++;
+            enemy.GetComponent<Enemy>().IncScaleSpeed();
         }
 
         if(points > maxPoints)
@@ -57,7 +60,16 @@ public class PointsManager : MonoBehaviour
 
     private void UpdatePointsText()
     {
-        pointsText.text = points + " X " + scalePoints;
+        if(SceneManager.GetActiveScene().name == "EndGameMenu")
+        {
+            pointsText.text = pointsText.text = pointsStr + points + "\n" +
+            maxPointsStr + maxPoints;
+        }
+        else
+        {
+            pointsText.text = points + " X " + scalePoints;
+        }
+        
     }
 
 

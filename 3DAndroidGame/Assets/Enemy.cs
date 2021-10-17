@@ -9,13 +9,16 @@ public class Enemy : MonoBehaviour
     public int clicksToDestroy;
 
     [SerializeField]
-    private int velocity;
+    private float velocity;
 
     [SerializeField]
     private int upDownValue;
 
     [SerializeField]
     private Text clicksToDestroyText;
+
+    [SerializeField]
+    private static float speedScale = 0.0f;
     
     public int clicksCount { get; set; }
 
@@ -26,6 +29,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         updateText(clicksToDestroy);
+        velocity += speedScale;
     }
 
     private void FixedUpdate()
@@ -43,5 +47,11 @@ public class Enemy : MonoBehaviour
     private void updateText(int newVal)
     {
         clicksToDestroyText.text = newVal.ToString();
+    }
+
+    public void IncScaleSpeed()
+    {
+        speedScale += 0.1f;
+
     }
 }

@@ -55,7 +55,7 @@ public class ClickManager : MonoBehaviour
 
                     var aux = Instantiate(missPrefab, missPrefab.transform.position, Quaternion.identity);
                     aux.transform.position = hit.point;
-
+                    Vibration.Vibrate(100);
                     FindObjectOfType<MissilManager>().CreateMissil(aux.transform);
                 }
                 else
