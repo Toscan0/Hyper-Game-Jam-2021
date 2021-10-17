@@ -14,7 +14,7 @@ Tap Tap Tap to defend an Earth Tap Tap Tap!
 ## Useful Links
 
 * [Gameplay](https://youtu.be/0nPJO4yVDzM)
-* [Release]()
+* [Release](https://github.com/Toscan0/Hyper-Game-Jam-2021/releases/tag/v2.0.0)
 
 ## Members
 
